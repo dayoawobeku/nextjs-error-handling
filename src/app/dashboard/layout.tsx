@@ -9,8 +9,8 @@ export default async function Layout({
 }) {
   const items = await getItems();
   return (
-    <div className="min-h-screen flex flex-col justify-between">
-      <header className="border grow">
+    <div className="min-h-screen flex flex-col gap-4 justify-between">
+      <header className="border border-green-500 grow">
         <h1>Welcome to the dashboard</h1>
         <nav>
           <ul>
@@ -21,13 +21,14 @@ export default async function Layout({
         </nav>
       </header>
 
-      <main className="border grow">
+      <main className="border grow p-4 space-y-4">
         <p>Here&apos;s the main section</p>
         {/* This is where the page content/error will be rendered */}
         <div className="border border-red-500">{children} </div>
+        <p>We can still render some content after the error boundary.</p>
       </main>
 
-      <footer className="border grow">
+      <footer className="border border-blue-500 grow">
         <p>Footer</p>
       </footer>
     </div>
